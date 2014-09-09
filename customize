@@ -15,7 +15,7 @@ pkg_add -v nodejs smtools zoneinit
 # Configuring image specific packages
 echo "* Configuring image specific packages.";
 
-pkg_add -v git gcc47 erlang gmake cmake pkg-config check
+pkg_add -v git gcc47 gmake cmake pkg-config check
 cd /root
 sh /root/01prepare
 sh /root/02build
