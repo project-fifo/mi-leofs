@@ -23,12 +23,12 @@ mkdir $log_dir/leo_storage
 chown leofs:leofs $log_dir/leo_*
 
 
-cp /root/files/leo_manager_0.conf /opt/local/leofs/leo_manager_0/etc/leo_manager.conf
-cp /root/files/leo_manager_1.conf /opt/local/leofs/leo_manager_1/etc/leo_manager.conf
-cp /root/files/leo_gateway.conf /opt/local/leofs/leo_gateway/etc/
-cp /root/files/leo_storage.conf /opt/local/leofs/leo_storage/etc/
+cp /root/files/leo_manager_0.conf $install_dir/leo_manager_0/etc/leo_manager.conf
+cp /root/files/leo_manager_1.conf $install_dir/leo_manager_1/etc/leo_manager.conf
+cp /root/files/leo_gateway.conf $install_dir/leo_gateway/etc/
+cp /root/files/leo_storage.conf $install_dir/leo_storage/etc/
 
-svccfg import /root/files/leo_manager_0.xml
-svccfg import /root/files/leo_manager_1.xml
-svccfg import /root/files/leo_gateway.xml
-svccfg import /root/files/leo_storage.xml
+cp /root/files/leo_manager_0.xml $install_dir/leo_manager_0/etc
+cp /root/files/leo_manager_1.xml $install_dir/leo_manager_1/etc
+cp /root/files/leo_gateway.xml $install_dir/leo_gateway/etc
+cp /root/files/leo_storage.xml $install_dir/leo_storage/etc 
