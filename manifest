@@ -1,0 +1,7 @@
+name="leofs"
+organization="Joyent"
+brand="Instance"
+version="1.1.2"
+description="LeoFS s3 compatible storage all in one image."
+homepage="http://loefs.org"
+users="root admin"

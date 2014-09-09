@@ -1,0 +1,3 @@
+cd leofs*/
+make
+make release

@@ -1,0 +1,6 @@
+VERSION=1.1.2
+
+curl -kLO https://github.com/leo-project/leofs/archive/${VERSION}.tar.gz
+tar zxvf ${VERSION}.tar.gz
+groupadd leofs
+useradd -g leofs leofs

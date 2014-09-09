@@ -1,0 +1,30 @@
+#!/usr/bin/bash
+#
+# Put customizations to your image in this file.
+
+PATH=/opt/local/gnu/bin:/opt/local/bin:/opt/local/sbin:/usr/bin:/usr/sbin
+
+# Exit if any commands fail
+set -o errexit
+
+# Ensure we have updated standard packages
+echo "* Updating standard packages.";
+pkg_delete -v nodejs smtools zoneinit
+pkg_add -v nodejs smtools zoneinit
+
+# Configuring image specific packages
+echo "* Configuring image specific packages.";
+
+pkg_add -v git gcc47 erlang gmake cmake pkg-config check
+cd /root
+sh /root/01prepare
+sh /root/02build
+sh /root/03install
+
+# Clean up
+pkg_delete -v git gcc47 gmake cmake check pkg-config
+echo "* Cleaning up."
+rm -rf /root/*
+
+# Prepare image for provisioning
+sm-prepare-image -y

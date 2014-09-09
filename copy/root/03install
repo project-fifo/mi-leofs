@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+
+install_dir=/opt/local/leofs
+db_dir=/var/db
+log_dir=/var/log
+
+rm -rf $install_dir
+mkdir $install_dir
+cp -r /root/leofs*/package/leo_* $install_dir
+
+rm -rf $db_dir/leo_*
+mkdir $db_dir/leo_storage
+mkdir $db_dir/leo_gateway
+mkdir -p $db_dir/leo_manager_0/mnesia
+mkdir -p $db_dir/leo_manager_1/mnesia
+chown leofs:leofs $db_dir/leo_*
+
+rm -rf $log_dir/leo_*
+mkdir $log_dir/leo_manager_0
+mkdir $log_dir/leo_manager_1
+mkdir $log_dir/leo_gateway
+mkdir $log_dir/leo_storage
+chown leofs:leofs $log_dir/leo_*
+
+
+cp /root/files/leo_manager_0.conf /opt/local/leofs/leo_manager_0/etc/leo_manager.conf
+cp /root/files/leo_manager_1.conf /opt/local/leofs/leo_manager_1/etc/leo_manager.conf
+cp /root/files/leo_gateway.conf /opt/local/leofs/leo_gateway/etc/
+cp /root/files/leo_storage.conf /opt/local/leofs/leo_storage/etc/
+
+svccfg import /root/files/leo_manager_0.xml
+svccfg import /root/files/leo_manager_1.xml
+svccfg import /root/files/leo_gateway.xml
+svccfg import /root/files/leo_storage.xml
