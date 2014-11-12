@@ -1,4 +1,4 @@
-VERSION=1.1.2
+VERSION=1.2.1
 
 curl -kLO https://github.com/leo-project/leofs/archive/${VERSION}.tar.gz
 tar zxvf ${VERSION}.tar.gz
