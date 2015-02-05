@@ -9,6 +9,11 @@ This dataset is a all in one dataset for LeoFS, it runs with a N 1 to be able to
 Changelog
 #########
 
+1.2.5
+*****
+
+Update to LeoFS 1.2.5
+
 1.2.1
 *****
 
